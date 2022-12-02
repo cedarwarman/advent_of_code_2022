@@ -17,10 +17,10 @@ for line in f:
     print(line)
     if line.strip():
         one_sum = one_sum + int(line.strip())
-        print("Sum = ", one_sum)
+        # print("Sum = ", one_sum)
 
     else:
-        print("Found empty line, appending sum and resetting")
+        # print("Found empty line, appending sum and resetting")
         sums.append(one_sum)
         one_sum = 0
 
