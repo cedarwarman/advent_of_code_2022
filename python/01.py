@@ -10,19 +10,23 @@ import pathlib
 # Reading in the file
 f = open(pathlib.Path(__file__).resolve().parents[1] / "puzzle_input" / "puzzle_input_01.txt")
 
-sum = 0
+one_sum = 0
 sums = []
 
 for line in f:
     print(line)
     if line.strip():
-        sum = sum + int(line.strip())
-        print("Sum = ", sum)
+        one_sum = one_sum + int(line.strip())
+        print("Sum = ", one_sum)
 
     else:
         print("Found empty line, appending sum and resetting")
-        sums.append(sum)
-        sum = 0
+        sums.append(one_sum)
+        one_sum = 0
 
 print("Max is: ", max(sums))
+
+top_three = sum(sorted(sums, reverse=True)[0:3])
+
+print("Top three total is: ", top_three)
 
